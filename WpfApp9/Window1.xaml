@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfApp9.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Window1" Height="400" Width="800">
+    <Grid Background="LightGray">
+                <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <TextBlock Text="Почта:" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+            <Button Background="DarkRed" Content="INBOX" Foreground="White"/>
+            <Button Background="DarkRed" Content="Отпраленные" Foreground="White"/>
+            <Button Background="DarkRed" Content="Черновики" Foreground="White"/>
+            <Button Background="DarkRed" Content="Спам" Foreground="White"/>
+            <Button Background="DarkRed" Content="Корзина" Foreground="White"/>
+            <Button Name="OpenMessageButton" Background="DarkRed" Content="Открыть сообщение" Foreground="White" Click="OpenMessageButton_Click"/>
+            <Button Name="ComposeMessageButton" Content="Написать" VerticalAlignment="Bottom" Background="DarkRed" Foreground="White" Click="ComposeMessageButton_Click"/>
+        </StackPanel>
+
+        <Frame Name="Frame" Grid.Column="2"/>
+
+        <!-- Правая панель с содержимым -->
+        <Grid Grid.Column="1">
+            <ListView x:Name="messagesListView" Margin="10" ItemsSource="{Binding SelectedFolder.Messages}" SelectionChanged="MessagesListView_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Отправитель" DisplayMemberBinding="{Binding From}" Width="150"/>
+                        <GridViewColumn Header="Тема" DisplayMemberBinding="{Binding Subject}" Width="300"/>
+                        <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding Date}" Width="150"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </Grid>
+</Window>

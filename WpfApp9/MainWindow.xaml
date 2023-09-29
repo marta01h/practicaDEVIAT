@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfApp9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp9"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="400">
+    <Grid Background="DarkRed">
+        <TextBlock Text="Вход" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0" FontSize="20" Foreground="White"/>
+
+        <Label Content="Почта:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,100,0,0" Foreground="White"/>
+        <TextBox x:Name="emailTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,100,0,0" Width="200"/>
+
+        <Label Content="Выбор:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,150,0,0" Foreground="White"/>
+        <ComboBox x:Name="emailComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,150,0,0" Width="200">
+            <ComboBoxItem Content="Yandex.ru" Tag="yandex.ru"/>
+            <ComboBoxItem Content="Gmail.com" Tag="gmail.com"/>
+            <ComboBoxItem Content="Mail.ru" Tag="mail.ru"/>
+        </ComboBox>
+
+        <Label Content="Пароль:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,200,0,0" Foreground="White"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,200,0,0" Width="200" Height="25"/>
+
+        <Button Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,250,0,0" Width="100" Click="LoginButton_Click"/>
+    </Grid>
+</Window>
